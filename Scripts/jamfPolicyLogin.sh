@@ -10,7 +10,8 @@
 #
 ####################################################################################################
 # This script was meant to run a bash script (.sh) It could be modified to run a different type
-/bin/mkdir -p /Library/LaunchAgents
+loggedInUser=$( python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");' )
+mkdir -p /Users/"$loggedInUser"/Library/LaunchAgents
 # Desired name for plist Example: com.mycompany.test (do not include .plist)
 plistName="$4"
 # Path to script
@@ -28,7 +29,7 @@ if [ -z "$customTriggerName" ]; then
 else
   echo "\$customTriggerName is set to: $customTriggerName"
 fi
-outputPlist="/Library/LaunchAgents/$plistName.plist"
+outputPlist="/Users/$loggedInUser/Library/LaunchAgents/$plistName.plist"
 # Uncomment below for logging
 # logFile="/var/log/launchd.log"
 # if [ -d "$logFile" ]; then
