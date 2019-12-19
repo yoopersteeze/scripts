@@ -9,18 +9,16 @@
 # MAINTAIN THIS SCRIPT
 #
 ####################################################################################################
-# This script was designed to touch a file at login
+# This script was designed to touch a file at login to be used with a launchd to execute a jamf policy at login
 
 # Make the LaunchAgents directory if does not exist
 mkdir -p /Library/LaunchAgents
-# Make the Sunnyvale directory if it does not exist
-# mkdir -p /Users/Shared/Sunnyvale
 # Desired name for plist Example: com.mycompany.test (do not include .plist)
 # plistName="$4"
-plistName="com.sunnyvale.test1"
+plistName="com.company.something.meaningful"
 # Path to file to touch
 # touchFile="$5"
-touchFile="/Users/Shared/com.sunnyvale.test1"
+touchFile="/Users/Shared/com.company.something.meaningful"
 # Error checking
 if [ -z "$plistName" ]; then
   echo "\$plistName is null, please set a value. Exiting script."
@@ -35,14 +33,6 @@ else
   echo "\$touchFile is set to: $touchFile"
 fi
 outputPlist="/Library/LaunchAgents/$plistName.plist"
-# Uncomment below for logging
-# logFile="/var/log/launchd.log"
-# if [ -d "$logFile" ]; then
-#   echo "The file /var/log/launchd.log already exists."
-# else
-#   echo "[WARN] The /var/log/launchd.log did not exit. Creating it now."
-#   touch $logFile
-# fi
 /bin/cat > "$outputPlist" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -57,13 +47,6 @@ outputPlist="/Library/LaunchAgents/$plistName.plist"
   </array>
   <key>RunAtLoad</key>
   <true/>
-  <!--TO ENABLE LOGGING REMOVE THIS LINE AND UNCOMMENT BELOW-->
-  <!--key>StandardOutPath</key>
-  <string>$logFile</string>
-  <key>StandardErrorPath</key>
-  <string>$logFile</string>
-  <key>Debug</key>
-  <true/-->
 </dict>
 </plist>
 EOF
