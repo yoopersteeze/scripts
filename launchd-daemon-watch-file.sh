@@ -9,14 +9,14 @@
 # MAINTAIN THIS SCRIPT
 #
 ####################################################################################################
-# Make the LaunchAgents directory if does not exist
-# mkdir -p /Library/LaunchDaemons
-plistName="com.sunnyvale.login"
+# plistName="$4"
+# plist domain name that is meaningful
+plistName="com.company.something.meaningful"
 # Path to file to touch
 # touchFile="$5"
-touchFile="/Users/Shared/com.sunnyvale.test1"
+touchFile="/Users/Shared/com.company.something.meaningful" # This is the same file the launch agent is touching
 event="word"
-# outputPlist="/Library/LaunchAgents/$plistName.plist"
+# event="$6"
 outputPlist="/Library/LaunchDaemons/$plistName.plist"
 /bin/cat > "$outputPlist" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
