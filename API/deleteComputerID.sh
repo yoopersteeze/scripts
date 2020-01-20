@@ -14,6 +14,18 @@
 # Delete computer by ID
 #
 ####################################################################################################
+####################################################################################################
+#
+# DEFINE VARIABLES & READ IN PARAMETERS
+#
+####################################################################################################
+
+read -p "Jamf Pro URL: " server
+read -p "Jamf Pro Username: " username
+read -s -p "Jamf Pro Password: " password
+echo ""
+read -p "ComputerID: " cid
+####################################################################################################
 # Courtesy of github dot com slash zdorow
 echo "Testing connection to Jamf Pro..."
 echo "This test assumes the user has admin credentials"
@@ -41,18 +53,6 @@ else
     echo "Lets try this again."
     exit 99
 fi
-####################################################################################################
-#
-# DEFINE VARIABLES & READ IN PARAMETERS
-#
-####################################################################################################
-
-read -p "Jamf Pro URL: " server
-read -p "Jamf Pro Username: " username
-read -s -p "Jamf Pro Password: " password
-echo ""
-read -p "ComputerID: " cid
-
 ####################################################################################################
 #
 # SCRIPT CONTENTS - DO NOT MODIFY BELOW THIS LINE
