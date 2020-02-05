@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#!/bin/sh
 ####################################################################################################
 #
 # THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
@@ -21,7 +19,7 @@
 # 65,
 # 66,
 # 67
-#
+# The check connection assumes the account has permissions to READ Users.
 ####################################################################################################
 #
 # DEFINE VARIABLES & READ IN PARAMETERS
