@@ -7,7 +7,7 @@ dt=$(date '+%m/%d/%Y %H:%M:%S')
 deferPref=/Library/Preferences/com.sunnyvale.softwareupdate.defer.plist
 currentVersion=$(sw_vers | grep ProductVersion | awk '{print $2}')
 
-remaining=$(/usr/bin/defaults read /Library/Preferences/com.softwareupdate.defer.plist defer)
+remaining=$(/usr/bin/defaults read /Library/Preferences/com.sunnyvale.softwareupdate.defer.plist defer)
 showJamfHelpers()
 {
   "$JAMFHELPER" -windowType utility -windowPosition center -title "macOS Software Update" -heading "macOS Software Update" -alignHeading center -description "You have selected to install this update at a different time.  You have $deferRemaining more deferrals before this update is automatically installed." -alignDescription center -icon /System/Library/PreferencePanes/SoftwareUpdate.prefPane/Contents/Resources/SoftwareUpdate.icns -button1 "Close"
