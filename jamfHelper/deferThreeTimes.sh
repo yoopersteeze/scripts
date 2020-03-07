@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Credits to github dot come slash zacharyfisher
 # Software Update Defer Policy
 JAMFHELPER="/Library/Application Support/JAMF/bin/jamfhelper.app/Contents/MacOS/jamfHelper"
 log="/var/tmp/su.log"
