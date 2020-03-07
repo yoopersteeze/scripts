@@ -13,7 +13,7 @@
 #
 # DESCRIPTION
 # This script will send a command to restart ipad to desired mobile device group
-# Credits go to github dot com slash kc9wwh 
+# Most credits go to github dot com slash kc9wwh
 ####################################################################################################
 #
 # DEFINE VARIABLES & READ IN PARAMETERS
@@ -23,7 +23,7 @@
 jamfProURL="https://acme.jamfcloud.com"             # URL of the Jamf Pro server (ie. https://jamf.acme.com:8443)
 jamfUser=""					                    	# API user account in Jamf Pro w/ Update permission
 jamfPass=""					                    	# Password for above API user account
-mobileDeviceGroupID=""                              # ID Number of Mobile Device Group to Restart iPad for
+mobileDeviceGroupID=""                              # ID Number of Mobile Device Group to Enable Lost Mode for
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # APPLICATION

@@ -26,12 +26,12 @@
 #
 #	Example:
 #
-#	Eau Claire,
-#	Minneapolis,
+#		Eau Claire,
+#		Minneapolis,
 # 	Sydney,
 # 	Tokyo,
 # 	Katowice,
-#	Amersterdam
+#		Amersterdam
 #
 #
 ####################################################################################################
@@ -61,7 +61,7 @@ for ((i=0; i<$length;i++));
 		buildName=$(echo ${lines[i]} | sed 's/,//g' | tr -d '\r\n')
 		#If the string isn't empty
 		if [ -n "$buildName" ]; then
-			# POST each building 
+			# POST each building
 			curl -ksu "$username":"$password" -H "content-type: application/xml" "$server"/JSSResource/buildings/id/-1 -d "<building><name>$buildName</name></building>" -X POST
 		fi
 done
