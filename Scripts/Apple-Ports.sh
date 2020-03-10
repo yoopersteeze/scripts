@@ -8,9 +8,12 @@ else
    echo "File Exits, removing now!"
    rm $output
 fi
+echo "Starting!"
+echo "--APNS Ports --"
 echo "--APNS Ports --" >> "$output"
 nc -vz 5-courier.push.apple.com 443 >> "$output" 2>&1
 nc -vz 5-courier.push.apple.com 5223 >> "$output" 2>&1
+echo "--MacOS Only Below --"
 echo "--MacOS Only Below --" >> "$output" 2>&1
 nc -vz lcdn-registration.apple.com 443 >> "$output" 2>&1
 nc -vz oscdn.apple.apple.com 443 >> "$output" 2>&1
@@ -32,14 +35,17 @@ nc -vz gs.apple.com 80 >> "$output" 2>&1
 nc -vz gs.apple.com 443 >> "$output" 2>&1
 nc -vz ig.apple.com 443 >> "$output" 2>&1
 nc -vz skl.apple.com 443 >> "$output" 2>&1
+echo "--Running iOS Only Tests --"
 echo "--iOS Only Below --" >> "$output" 2>&1
 nc -vz ns.itunes.apple.com 443 >> "$output" 2>&1
+echo "--Running Various Ports--"
 echo "--Various Ports--" >> "$output"
 nc -vz gateway.push.apple.com 2195 >> "$output" 2>&1
 nc -vz gateway.sandbox.push.apple.com 2195 >> "$output" 2>&1
 nc -vz gateway.push.apple.com 2196 >> "$output" 2>&1
 nc -vz gateway.sandbox.push.apple.com 2196 >> "$output" 2>&1
 nc -vz deploy.apple.com 443 >> "$output" 2>&1
+echo "--Running Port 80 Tests--"
 echo "--Port 80 Below--" >> "$output" 2>&1
 nc -vz hrweb.cdn-apple.com 80 >> "$output" 2>&1
 nc -vz itunes.apple.com 80 >> "$output" 2>&1
@@ -63,6 +69,7 @@ nc -vz ocsp.digicert.com 80 >> "$output" 2>&1
 nc -vz ocsp.verisign.com 80 >> "$output" 2>&1
 nc -vz updates-http.cdn-apple.com 80 >> "$output" 2>&1
 nc -vz updates-cdn-apple.com 443 >> "$output" 2>&1
+echo "--Running Port 443 Tests --"
 echo "--Port 443 Below --" >> "$output" 2>&1
 nc -vz hrweb.cdn-apple.com 443 >> "$output" 2>&1
 nc -vz itunes.apple.com 443 >> "$output" 2>&1
@@ -92,4 +99,4 @@ nc -vz ocsp.digicert.com 443 >> "$output" 2>&1
 nc -vz a3.mzstatic.com 443 >> "$output" 2>&1
 nc -vz apps.apple.com 443 >> "$output" 2>&1
 nc -vz captive.apple.com 443 >> "$output" 2>&1
-echo "Done"
+echo "Done! Outfile at /tmp/ports.txt"
