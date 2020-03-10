@@ -38,7 +38,7 @@ nc -vz skl.apple.com 443 >> "$output" 2>&1
 echo "--Running iOS Only Tests --"
 echo "--iOS Only Below --" >> "$output" 2>&1
 nc -vz ns.itunes.apple.com 443 >> "$output" 2>&1
-echo "--Running Various Ports--"
+echo "--Running Various Ports Test--"
 echo "--Various Ports--" >> "$output"
 nc -vz gateway.push.apple.com 2195 >> "$output" 2>&1
 nc -vz gateway.sandbox.push.apple.com 2195 >> "$output" 2>&1
