@@ -9,11 +9,11 @@ else
    rm $output
 fi
 echo "Starting!"
-echo "--APNS Ports --"
+echo "--Running APNS Ports Tests--"
 echo "--APNS Ports --" >> "$output"
 nc -vz 5-courier.push.apple.com 443 >> "$output" 2>&1
 nc -vz 5-courier.push.apple.com 5223 >> "$output" 2>&1
-echo "--MacOS Only Below --"
+echo "--Running MacOS Only Tests--"
 echo "--MacOS Only Below --" >> "$output" 2>&1
 nc -vz lcdn-registration.apple.com 443 >> "$output" 2>&1
 nc -vz oscdn.apple.apple.com 443 >> "$output" 2>&1
