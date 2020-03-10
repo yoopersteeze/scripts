@@ -26,7 +26,7 @@ nc -vz swdownload.apple.com 80 >> "$output" 2>&1
 nc -vz swdownload.apple.com 443 >> "$output" 2>&1
 nc -vz swpost.apple.com 80 >> "$output" 2>&1
 nc -vz swscan.apple.com 443 >> "$output" 2>&1
-nc -vz tbcs.apple.com 443 >> "$output" 2>&1
+nc -vz tbsc.apple.com 443 >> "$output" 2>&1
 nc -vz gg.apple.com 80 >> "$output" 2>&1
 nc -vz gg.apple.com 443 >> "$output" 2>&1
 nc -vz gnf-mdn.apple.com 443 >> "$output" 2>&1
@@ -64,11 +64,11 @@ nc -vz captive.apple.com 80 >> "$output" 2>&1
 nc -vz crl.apple.com 80 >> "$output" 2>&1
 nc -vz crl.entrust.com 80 >> "$output" 2>&1
 nc -vz ocsp.apple.com 80 >> "$output" 2>&1
-nc -vz ocsp.entrust.com 80 >> "$output" 2>&1
+nc -vz ocsp.entrust.net 80 >> "$output" 2>&1
 nc -vz ocsp.digicert.com 80 >> "$output" 2>&1
-nc -vz ocsp.verisign.com 80 >> "$output" 2>&1
+nc -vz ocsp.verisign.net 80 >> "$output" 2>&1
 nc -vz updates-http.cdn-apple.com 80 >> "$output" 2>&1
-nc -vz updates-cdn-apple.com 443 >> "$output" 2>&1
+nc -vz updates.cdn-apple.com 443 >> "$output" 2>&1
 echo "--Running Port 443 Tests --"
 echo "--Port 443 Below --" >> "$output" 2>&1
 nc -vz hrweb.cdn-apple.com 443 >> "$output" 2>&1
