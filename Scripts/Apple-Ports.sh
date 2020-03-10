@@ -16,8 +16,8 @@ nc -vz 5-courier.push.apple.com 5223 >> "$output" 2>&1
 echo "--Running MacOS Only Tests--"
 echo "--MacOS Only Below --" >> "$output" 2>&1
 nc -vz lcdn-registration.apple.com 443 >> "$output" 2>&1
-nc -vz oscdn.apple.apple.com 443 >> "$output" 2>&1
-nc -vz oscdn.apple.apple.com 80 >> "$output" 2>&1
+nc -vz oscdn.apple.com 443 >> "$output" 2>&1
+nc -vz oscdn.apple.com 80 >> "$output" 2>&1
 nc -vz osrecovery.apple.com 80 >> "$output" 2>&1
 nc -vz osrecovery.apple.com 443 >> "$output" 2>&1
 nc -vz swcdn.apple.com 80 >> "$output" 2>&1
