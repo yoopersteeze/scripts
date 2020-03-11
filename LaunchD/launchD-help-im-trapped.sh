@@ -15,7 +15,7 @@
 # Make the LaunchAgents directory if does not exist
 mkdir -p /Library/LaunchDaemons
 
-outputPlist="/Library/LaunchDaemons/com.sunnyvale.chickentacos.plist"
+outputPlist="/Library/LaunchDaemons/com.sunnyvale.trapped.plist"
 
 # Turn the volume all the way up
 /usr/bin/osascript -e "set Volume 10"
@@ -25,7 +25,7 @@ outputPlist="/Library/LaunchDaemons/com.sunnyvale.chickentacos.plist"
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.sunnyvale.chickentacos</string>
+	<string>com.sunnyvale.trapped</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/say</string>
