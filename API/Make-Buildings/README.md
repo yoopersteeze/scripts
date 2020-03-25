@@ -7,4 +7,4 @@ REQUIREMENTS
 This script requires a .csv file with a list of Building names. Each name must be on a
 new line seperated by comma.
 
-[Example](make-buildings.csv)
+[Example](example-buildings.csv)
