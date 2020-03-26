@@ -1,4 +1,5 @@
 #!/bin/bash
+# Credits to github dot com slash zacharyfisher 
 #####################################
 # Set Variables
 #####################################
