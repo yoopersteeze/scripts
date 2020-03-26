@@ -38,19 +38,19 @@ elif [ "$RESULT" -eq '2' ]; then
     echo "$(date) Cancel hit 1" >> $log
     deferRemaining="3"
     /usr/bin/defaults write $deferPref defer -int 1
-    echo "$(date) Defers hit = 3" >> $log
+    echo "$(date) Defers left = 3" >> $log
     showJamfHelpers
   elif [[ $(/usr/bin/defaults read $deferPref defer) -eq '1' ]]; then
     #	elif [[ $deferPrefValue = 1 ]]; then
     echo "$(date) Cancel hit 2" >> $log
     /usr/bin/defaults write $deferPref defer -int 2
-    echo "$(date) Defers hit = 2" >> $log
+    echo "$(date) Defers left = 2" >> $log
     deferRemaining="2"
     showJamfHelpers
   elif [[ $(/usr/bin/defaults read $deferPref defer) -eq '2' ]]; then
     echo "$(date) Cancel hit 3" >> $log
     /usr/bin/defaults write $deferPref defer -int 3
-    echo "$(date) Defers hit = 1" >> $log
+    echo "$(date) Defers left = 1" >> $log
     deferRemaining="1"
     showJamfHelpers
   elif [[ $(/usr/bin/defaults read $deferPref defer) -eq '3' ]]; then
