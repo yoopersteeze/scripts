@@ -18,7 +18,6 @@
 # DEFINE VARIABLES & READ IN PARAMETERS
 #
 ####################################################################################################
-
 read -p "Jamf Pro URL: " server
 read -p "Jamf Pro Username: " username
 read -s -p "Jamf Pro Password: " password
