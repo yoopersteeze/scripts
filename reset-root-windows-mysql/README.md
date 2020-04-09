@@ -1,4 +1,5 @@
 1. Stop MySQL
+
 _Stop the service from the services pane or_
 
 `net stop mysql57`
