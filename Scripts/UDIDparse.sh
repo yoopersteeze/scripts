@@ -24,7 +24,7 @@ if [[ -e "$file1" ]]; then
 fi
 
 echo ""
-echo "Opening ~/Desktop/UUIDs.txt"
+echo "Opening $file1"
 open $file1
 echo ""
 echo "Exiting Script"
