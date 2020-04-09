@@ -2,7 +2,11 @@
 
 _Stop the service from the services pane or_
 
-`net stop mysql57`
+```diff
++ `net stop mysql57`
+
+```
+
 
 _note mysql57 will reflect the version such as mysql80 and could be another customized name_
 
