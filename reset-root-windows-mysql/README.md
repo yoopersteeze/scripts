@@ -1,7 +1,8 @@
 1. Stop MySQL
-Stop the service from the services' pane
-or
+Stop the service from the services pane or
+
 `net stop mysql57`
+
 note mysql57 will reflect the version such as mysql80 and could be another customized name
 
 2. Run MySQL as the \_mysql user without grant tables. Leave this terminal window running
