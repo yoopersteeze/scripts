@@ -15,8 +15,8 @@ echo ""
 echo "Exporting List of UUIDs to ~/Desktop/UUIDs.txt"
 
 
-file1="/Users/$loggedInUser/Desktop/Desktop/UUIDs.txt"
-file2="/Users/$loggedInUser/Desktop/Desktop/UUID-1s.txt"
+file1="/Users/$loggedInUser/Desktop/UUIDs.txt"
+file2="/Users/$loggedInUser/Desktop/UUID-1s.txt"
 
 egrep "DeviceNotFoundException" "$logsLocation" | awk '{ print $10 }' | sort | uniq > $file1
 if [[ -e "$file1" ]]; then
