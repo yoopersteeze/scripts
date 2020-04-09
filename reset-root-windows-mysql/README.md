@@ -51,4 +51,4 @@ _Replace x.x with the version of mysql, such as 5.7 or 8.0_
 
 `"C:\Program Files\MySQL\MySQL Server x.x\bin\mysql" -u root -p`
 
-_Credits to: github dot com slash prikla
+_Credits to: github dot com slash prikla_
