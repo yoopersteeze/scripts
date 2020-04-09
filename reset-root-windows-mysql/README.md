@@ -3,7 +3,7 @@
 _Stop the service from the services pane or_
 
 ```diff
-+ `net stop mysql57`
++ net stop mysql57
 
 ```
 
