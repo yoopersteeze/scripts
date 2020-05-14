@@ -34,4 +34,4 @@ read -p "Activation Code: " code
 # MAIN PROCESS
 #
 ####################################################################################################
-curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/activationcode -X PUT -d '<activation_code><code>$code</code></activation_code>'
+curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/activationcode -X PUT -d "<activation_code><code>$code</code></activation_code>"
