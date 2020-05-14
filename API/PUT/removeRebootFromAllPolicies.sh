@@ -11,8 +11,7 @@
 ####################################################################################################
 #
 # DESCRIPTION
-# Removes reboot from all policies. Will fail if policy does not have reboot configured, but will
-# continue along.
+# Removes restart options from all policies.
 #
 ####################################################################################################
 #
