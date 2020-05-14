@@ -1,6 +1,4 @@
 #!/bin/bash
-
-#!/bin/sh
 ####################################################################################################
 #
 # THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
