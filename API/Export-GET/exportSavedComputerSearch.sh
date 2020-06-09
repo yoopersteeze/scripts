@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ####################################################################################################
 #
 # THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
@@ -19,7 +18,6 @@
 # DEFINE VARIABLES & READ IN PARAMETERS
 #
 ####################################################################################################
-
 read -p "Jamf Pro URL: " server
 read -p "Jamf Pro Username: " username
 read -s -p "Jamf Pro Password: " password
@@ -30,7 +28,6 @@ read -p "Saved Computer Search ID: " id
 # SCRIPT CONTENTS - DO NOT MODIFY BELOW THIS LINE
 #
 ####################################################################################################
-
 echo "Exporting Saved Search ID: $id to Desktop"
 curl -ksu $username:$password -H "content-type: text/xml" $server/JSSResource/advancedcomputersearches/id/$id | xmllint -format - > ~/Desktop/Saved-Search-$id.xml
 echo "Done!"
