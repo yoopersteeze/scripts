@@ -12,7 +12,7 @@ echo "Command: MainTitle: Welcome To Jamfcloud!" >> $NOTIFY_LOG
 echo "Command: MainText: Welcome to your new Mac.\\nWe are setting up a few things for you automatically.\\nPlease feel free to grab a coffee as this may take 10-15 minutes!" >> $NOTIFY_LOG
 sleep 10
 echo "Status: Preparing your new machine" >> $NOTIFY_LOG
-echo "Command: Determinate: 15" >> $NOTIFY_LOG
+echo "Command: Determinate: 7" >> $NOTIFY_LOG
 sleep 2
 echo "Status: Reticulating splines..." >> $NOTIFY_LOG
 sleep 2
@@ -26,11 +26,13 @@ sleep 5
 echo "Command: Image: /System/Library/CoreServices/Install in Progress.app/Contents/Resources/Installer.icns" >> $NOTIFY_LOG
 echo "Command: MainTitle: Installing everything you need for your first day" >> $NOTIFY_LOG
 echo "Command: MainText: All the apps you'll need today are already being installed. Once we're ready to start, you'll find Google Chrome and Firefox are all ready to go!\\nUse Spotlight search (Command + Spacebar) and type the app you want to open!" >> $NOTIFY_LOG
-###
+echo "Status: Pre-heating the oven..." >> $NOTIFY_LOG
+##
 sleep 10
 echo "Command: Image: /usr/local/images/ss.icns" >> $NOTIFY_LOG
 echo "Command: MainTitle: Self Service makes the Mac life easier" >> $NOTIFY_LOG
 echo "Command: MainText: Self Service includes helpful bookmarks and installers for other applications that may interest you." >> $NOTIFY_LOG
+echo "Status: Preparing the nachos..." >> $NOTIFY_LOG
 ###
 sleep 10
 ###
@@ -46,10 +48,10 @@ echo "Command: MainText: We'd prefer if you use Chrome, but Firefox is here in c
 echo "Status: Installing Firefox..." >> $NOTIFY_LOG
 /usr/local/bin/jamf policy -event firefox
 ###
-echo "Command: Image: /usr/local/images/firefox.icns" >> $NOTIFY_LOG
+echo "Command: Image: /System/Library/CoreServices/Dock.app/Contents/Resources/Dock.icns" >> $NOTIFY_LOG
 echo "Command: MainTitle: Dock Time!" >> $NOTIFY_LOG
 echo "Command: MainText: We're setting the Dock for you with the apps you'll need right away!" >> $NOTIFY_LOG
-echo "Status: Installing Firefox..." >> $NOTIFY_LOG
+echo "Status: Installing Dockutil..." >> $NOTIFY_LOG
 /usr/local/bin/jamf policy -event dockutil
 
 ###
