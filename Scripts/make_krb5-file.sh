@@ -18,6 +18,10 @@
 
 file="/etc/krb5.conf"
 
+if [[ -f $file ]]; then
+  cp $file $file.bak
+fi
+
 cat << EOF > $file
 [libdefaults]
 default_realm = DOMAIN.NAME
