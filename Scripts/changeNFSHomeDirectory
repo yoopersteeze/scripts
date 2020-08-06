@@ -1,0 +1,19 @@
+#!/bin/bash
+
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
+
+loggedInUser=$( scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
+
+# syntax below
+#dscl . -change /Users/<username> NFSHomeDirectory <old-path> <new-path>
+
+dscl . -change /Users/"$loggedInUser" NFSHomeDirectory "$4" "$5"
