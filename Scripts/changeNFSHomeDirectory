@@ -18,7 +18,12 @@ oldDir=$(dscl . -read /Users/$loggedInUser NFSHomeDirectory | awk '{print $2}')
 echo "Old Dir: $oldDir"
 
 # set new directory
-newDir="/Users/$loggedInUser/Desktop"
+newDir=""
+# Check if $newDir is blank
+if [[ -z "$newDir"]]; then
+  echo "\$newDir is null, please set a value. Exiting script as failure."
+  exit 1
+fi
 echo "New Dir: $newDir"
 
 # change it
