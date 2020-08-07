@@ -21,6 +21,10 @@ echo "Old Dir: $oldDir"
 newDir="/Users/$loggedInUser/Desktop"
 echo "New Dir: $newDir"
 
+# change it
+dscl . -change /Users/"$loggedInUser" NFSHomeDirectory "$oldDir" "$newDir"
+
+####################################################################################################
 # Example
 #newDir="/Users/$loggedInUser/Desktop
 
@@ -28,5 +32,3 @@ echo "New Dir: $newDir"
 #dscl . -change /Users/<username> NFSHomeDirectory <old-path> <new-path>
 # Exmaple to change home directory to /Users/jamf.admin/Desktop
 # dscl . -change /Users/"$loggedInUser" NFSHomeDirectory "$oldDir" "$newDir"
-
-dscl . -change /Users/"$loggedInUser" NFSHomeDirectory "$oldDir" "$newDir"
