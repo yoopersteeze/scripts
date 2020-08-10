@@ -18,7 +18,7 @@ mkdir -p /Library/LaunchAgents
 plistName="com.company.something.meaningful"
 # Path to file to touch
 # touchFile="$5"
-touchFile="/Users/Shared/com.company.something.meaningful"
+touchFile="/Users/Shared/.com.company.something.meaningful" # making it hidden will work too
 # Error checking
 if [ -z "$plistName" ]; then
   echo "\$plistName is null, please set a value. Exiting script."
@@ -52,6 +52,7 @@ outputPlist="/Library/LaunchAgents/$plistName.plist"
 EOF
 /usr/sbin/chown -R root:wheel "$outputPlist"
 /bin/chmod 644 "$outputPlist"
-/bin/launchctl load -w "$outputPlist"
+/bin/launchctl bootstrap system "$outputPlist"
+/bin/launchctl start "$outputPlist"
 
 exit 0
