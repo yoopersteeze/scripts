@@ -14,7 +14,7 @@
 plistName="com.company.something.meaningful"
 # Path to file to touch
 # touchFile="$5"
-touchFile="/Users/Shared/com.company.something.meaningful" # This is the same file the launch agent is touching
+touchFile="/Users/Shared/.com.company.something.meaningful" # This is the same file the launch agent is touching
 event="word"
 # event="$6"
 outputPlist="/Library/LaunchDaemons/$plistName.plist"
@@ -43,5 +43,6 @@ outputPlist="/Library/LaunchDaemons/$plistName.plist"
 EOF
 /usr/sbin/chown -R root:wheel "$outputPlist"
 /bin/chmod 644 "$outputPlist"
-/bin/launchctl load -w "$outputPlist"
+/bin/launchctl bootstrap system "$outputPlist"
+/bin/launchctl start "$outputPlist"
 exit 0
