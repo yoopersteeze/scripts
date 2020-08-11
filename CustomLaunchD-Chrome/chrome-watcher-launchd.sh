@@ -39,5 +39,6 @@ outputPlist="/Library/LaunchDaemons/$plistName.plist"
 EOF
 /usr/sbin/chown -R root:wheel "$outputPlist"
 /bin/chmod 644 "$outputPlist"
-/bin/launchctl load -w "$outputPlist"
+/bin/launchctl bootstrap system "$outputPlist"
+/bin/launchctl start "$outputPlist"
 exit 0
