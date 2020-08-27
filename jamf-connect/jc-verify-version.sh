@@ -1,7 +1,7 @@
 #!/bin/bash
 
 jcvv=$(defaults read /Applications/Jamf\ Connect\ Verify.app/Contents/Info.plist CFBundleShortVersionString)
-file="/Applications/Jamf\ Connect\ Verify.app/Contents/Info.plist"
+file=/Applications/Jamf\ Connect\ Verify.app/Contents/Info.plist
 if [[ ! -e $file ]]; then
   echo "<result>Not Installed</result>"
 else
