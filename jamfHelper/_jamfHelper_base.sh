@@ -44,10 +44,10 @@ fi
 
 userChoice=$("$jamfHelper" -windowType hud -windowPosition "$windowPosition" -defaultButton "1" -button1 "Ok" -button2 "Cancel" -title "$titleText" -description "$descriptionText" -icon "$iconLocation" -heading "$headingText")
 
-# If user selects "Update Now"
+# If user selects "Button 1"
 if [ "$userChoice" -eq 0 ]; then
    /usr/local/bin/jamf policy -event customTriggerNameHere
-# If user selects "Later"
+# If user selects "Button 2"
 elif [ "$userChoice" -eq 2 ]; then
    echo "User clicked Later; now exiting."
    exit 0
