@@ -42,4 +42,13 @@ if [ "$9" != "" ] && [ "$timeout" == "" ]; then
     timeout=$9
 fi
 
-"$jamfHelper" -windowType hud -windowPosition "$windowPosition" -defaultButton "1" -button1 "Ok" -button2 "Cancel" -title "$titleText" -description "$descriptionText" -icon "$iconLocation" -heading "$headingText"
+userChoice=$("$jamfHelper" -windowType hud -windowPosition "$windowPosition" -defaultButton "1" -button1 "Ok" -button2 "Cancel" -title "$titleText" -description "$descriptionText" -icon "$iconLocation" -heading "$headingText")
+
+# If user selects "Update Now"
+if [ "$userChoice" -eq 0 ]; then
+   /usr/local/bin/jamf policy -event customTriggerNameHere
+# If user selects "Later"
+elif [ "$userChoice" -eq 2 ]; then
+   echo "User clicked Later; now exiting."
+   exit 0
+fi
