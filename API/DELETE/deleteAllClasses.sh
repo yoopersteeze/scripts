@@ -12,10 +12,11 @@
 #
 # DESCRIPTION
 # This is a self destruct script that will delete all classes in Jamf Pro.
-# Requires a user that has READ and DELETE privys for Classes
+# Requires a user that has READ and DELETE privys for Classes. It will read in
+# parameters, so no need to change anything in the script.
 ####################################################################################################
 #
-# DEFINE VARIABLES & READ IN PARAMETERS
+# READ IN PARAMETERS (NO NEED TO CHANGE ANYTHING HERE)
 #
 ####################################################################################################
 echo "#####################"
