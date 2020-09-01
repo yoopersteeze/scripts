@@ -4,7 +4,7 @@
 #security find-certificate -a -Z '/Library/Keychains/System.keychain' > certificates.txt
 #
 ### Parse Specific Certificates to new TXT File
-#cat certificates.txt| grep -i -B 9 'Sidewalk Labs Device Intermediate CA' > newCertificates.txt
+#cat certificates.txt| grep -i -B 9 'ACME Soft Intermediate CA' > newCertificates.txt
 #rm -rf certificates.txt
 #
 #
