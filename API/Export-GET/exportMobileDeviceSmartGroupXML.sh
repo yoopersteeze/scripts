@@ -12,7 +12,7 @@
 ####################################################################################################
 #
 # DESCRIPTION
-# This script will export a saved search as xml to the Desktop called "Saved-Search-$ID.xml"
+# This script will export a mobile device group as xml to the Desktop called "Mobile-Device-Group-Name-"$name".xml"
 #
 ####################################################################################################
 #
@@ -31,6 +31,9 @@ read -p "Mobile Device SmartGroup ID: " id
 # MAIN PROCESS
 #
 ####################################################################################################
-echo "Exporting SmartGroup ID: $id to Desktop"
-curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/mobiledevicegroups/id/$id | xmllint -format - > ~/Desktop/Mobile-Device-Group-$id.xml
+# Get the name of the group
+name=$(curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/mobiledevicegroups/id/$id | xmllint --xpath '/mobile_device_group/name/text()' -)
+# export to Desktop
+echo "Exporting Mobile Device SmartGroup ID: $id - Name: $name to Desktop"
+curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/mobiledevicegroups/id/$id | xmllint -format - > ~/Desktop/Mobile-Device-Group-Name-"$name".xml
 echo "Done!"
