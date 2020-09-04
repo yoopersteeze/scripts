@@ -50,6 +50,6 @@ outputPlist="/Library/LaunchDaemons/com.sunnyvale.trapped.plist"
 EOF
 /usr/sbin/chown -R root:wheel "$outputPlist"
 /bin/chmod 644 "$outputPlist"
-/bin/launchctl load -w "$outputPlist"
+/bin/launchctl bootstrap system "$outputPlist"
 
 exit 0
