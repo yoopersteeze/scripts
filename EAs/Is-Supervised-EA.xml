@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>EA - Is Supervised</displayName>
+<description/>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash&#13;
+####################################################################################################&#13;
+# &#13;
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE&#13;
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT&#13;
+#&#13;
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE&#13;
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE&#13;
+# MAINTAIN THIS SCRIPT                                                                                                                         &#13;
+# &#13;
+####################################################################################################&#13;
+RESULT=$( /usr/libexec/mdmclient QueryDeviceInformation | grep IsSupervised | head -1 | sed 's/^ *//g' | awk '{print $3}' | sed 's/.$//' )&#13;
+&#13;
+majorOSVersion=$(/usr/bin/sw_vers -productVersion | awk -F. {'print $2'})&#13;
+&#13;
+if [[ $majorOSVersion -lt 15 ]]; then&#13;
+	echo "&lt;result&gt;Collected for 10.15 or later&lt;/result&gt;"&#13;
+elif&#13;
+	[[ $RESULT -eq 0 ]]; then&#13;
+	echo "&lt;result&gt;No&lt;/result&gt;"&#13;
+else&#13;
+	echo "&lt;result&gt;Yes&lt;/result&gt;"&#13;
+fi</scriptContentsMac>
+</extensionAttribute>
