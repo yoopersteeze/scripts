@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # credits to nick k
-jamfproserver="https://jamf.disneystreaming.com:8443"
+jamfproserver="https://jss-url-here:8443"
 response="$(curl -s $jamfproserver/healthCheck.html)"
 until [ "$response" = "[]" ]
 do
