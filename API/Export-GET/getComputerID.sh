@@ -30,4 +30,4 @@ read -p "Computer ID: " cid
 #
 ####################################################################################################
 
-curl -ksu "$username":"$password" -H "accept: text/xml" "$server"/JSSResource/computers/id/$cid | xmllint --format -
+curl -ksu "$username":"$password" -H "accept: text/xml" "$server"/JSSResource/computers/id/$cid | xmllint --format - > ~/Downloads/file.txt
