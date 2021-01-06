@@ -34,5 +34,5 @@ read -p "Computer Smart Group ID: " id
 loggedInUser=$( scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }' )
 echo "Exporting Computer Group ID: $id to Desktop"
 #curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/computergroups/id/$id | xmllint -format - > /Users/"$loggedInUser"/Desktop/Computer-Group-$id.xml
-curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/computergroups/id/$id | xmllint --xpath '//computer_group/criteria/criterion' - > /Users/"$loggedInUser"/Desktop/Computer-Group-$id.xml
+curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/computergroups/id/$id | xmllint --xpath '/computer_group/criteria/criterion' - > /Users/"$loggedInUser"/Desktop/Computer-Group-$id.xml
 echo "Done!"
