@@ -46,7 +46,7 @@ if [ $(echo "${server: -1}") == "/" ]; then
 fi
 
 echo "Deleting all classes now!"
-classID=$(curl -ksu $username:$password -H "accept: text/xml" $server/JSSResource/classes | xmllint --format - | awk -F '[<>]' '/id/{print $3}')
+classID=$(curl -ksu "$username":"$password" -H "accept: text/xml" "$server"/JSSResource/classes | xmllint --format - | awk -F '[<>]' '/id/{print $3}')
 for class in $classID;do
-	curl -ksu $username:$password -H "Content-type: text/xml" $server/JSSResource/classes/id/$class -X DELETE
+	curl -ksu "$username":"$password" -H "Content-type: text/xml" "$server"/JSSResource/classes/id/"$class" -X DELETE
 done
