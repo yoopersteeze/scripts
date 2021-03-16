@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ####################################################################################################
 #
 # THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
@@ -48,5 +49,6 @@ do
 	mdm=$(curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/computers/id/"$id" | xmllint --xpath '/computer/general/mdm_capable/text()' - )
 	echo "ID $id is:
 	Managed: $managed
-	MDM Capable: $mdm"
+	MDM Capable: $mdm" >> /tmp/9185-c.txt
+	echo "Export Done"
 done
