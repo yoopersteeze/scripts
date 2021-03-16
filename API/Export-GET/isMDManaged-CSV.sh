@@ -45,5 +45,6 @@ for ((i=0; i<$length;i++));
 do
 	id=$(echo ${deviceIDs[i]} | sed 's/,//g' | sed 's/ //g'| tr -d '\r\n')
 	managed=$(curl -ksu "$username":"$password" -H "content-type: text/xml" "$server"/JSSResource/mobiledevices/id/"$id" | xmllint --xpath '/mobile_device/general/managed/text()' - )
-	echo "ID $id is Managed: $managed"
+	echo "ID $id is Managed: $managed" >> /tmp/9185-md.txt
+	echo "Export Done"
 done
