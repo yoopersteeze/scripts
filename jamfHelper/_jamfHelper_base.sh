@@ -42,7 +42,7 @@ if [ "$9" != "" ] && [ "$timeout" == "" ]; then
     timeout=$9
 fi
 
-userChoice=$("$jamfHelper" -windowType hud -windowPosition "$windowPosition" -defaultButton "1" -button1 "Ok" -button2 "Cancel" -title "$titleText" -description "$descriptionText" -icon "$iconLocation" -heading "$headingText")
+userChoice=$("$jamfHelper" -windowType hud -windowPosition "$windowPosition" -defaultButton "1" -button1 "Ok" -button2 "Cancel" -title "$titleText" -description "$descriptionText" -icon "$iconLocation" -heading "$headingText" -countdown "$countdown")
 
 # If user selects "Button 1"
 if [ "$userChoice" -eq 0 ]; then
