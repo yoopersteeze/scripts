@@ -15,7 +15,7 @@ sn=$(system_profiler SPHardwareDataType | awk '/Serial Number/{print $4}')
 id=$(curl -ksu "$username":"$password" -H "accept: text/xml" "$server"/JSSResource/computers/serialnumber/"$sn" | xmllint --xpath "computer/general/id/text()" -)
 
 ## Log Collection
-fileName=$currentUser-$compHostName-$timeStamp.zip
+fileName="$currentUser"-"$compHostName"-"$timeStamp".zip
 ################################
 # SPECIFY DIFFERENT FILES BELOW
 ################################
