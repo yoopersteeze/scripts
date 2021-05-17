@@ -6,6 +6,7 @@
 username="$4" # jamf pro username
 password="$5" #jamf pro password
 server="$6" # jamf pro url Example: https://mycompany.jamfcloud.com (jamfcloud) || https://mycompany.com:8443 (on-prem)
+logsToUpload="$7" # insert array of full log / file paths here seperated by space
 
 ## System Variables
 currentUser=$( stat -f%Su /dev/console )
@@ -19,7 +20,7 @@ fileName="$currentUser"-"$compHostName"-"$timeStamp".zip
 ################################
 # SPECIFY DIFFERENT FILES BELOW
 ################################
-zip /private/tmp/$fileName /private/var/log/jamf.log /private/var/log/install.log /private/var/log/system.log
+zip /private/tmp/$fileName "$logsToUpload"
 
 # POST zip file to Jamf Pro
 curl -sku "$username":"$password" "$server"/JSSResource/fileuploads/computers/id/"$id" -X POST -F "name=@/private/tmp/$fileName"
