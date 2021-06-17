@@ -29,10 +29,10 @@ uid=$(dscl . read /Users/"$loggedInUser" UniqueID | awk '{print $2}')
 # make the User's LaunchAgents directory if it does not exist
 /bin/mkdir -p /Users/"$loggedInUser"/Library/LaunchAgents
 
-# Parameter 4 in Jamf Pro
+# Parameter 4 in Jamf Pro (plist identifier / name)
 plistName="$4"
 
-# Parameter 5 in Jamf Pro
+# Parameter 5 in Jamf Pro (full path to app to open)
 appPath="$5"
 
 # Error checking
