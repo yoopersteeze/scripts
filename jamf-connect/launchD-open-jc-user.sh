@@ -16,11 +16,11 @@ loggedInUser=$( scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! 
 
 # bail out if user is null, root or _mbsetupser or other local user specified
 if [[ -z "$loggedInUser" || "$loggedInUser" == "root" || "$loggedInUser" == "_mbsetupser" || "$loggedInUser" == "ldamin" ||  "$loggedInUser" == "mysuperuser" ]]; then
-    echo "No real user logged in"
-    echo "Logged in user is: $loggedInUser"
-    exit 1
+  echo "No real user logged in"
+  echo "Logged in user is: $loggedInUser"
+  exit 1
 else
-	echo "Proceeding"
+  echo "Proceeding"
 fi
 
 # get ID of logged in user
